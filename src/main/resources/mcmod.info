@@ -1,0 +1,16 @@
+[
+{
+  "modid": "GlassWorker",
+  "name": "oitsjustjose's Glass Mod!",
+  "description": "Not a whole lot going on yet!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["oitsjustjose"],
+  "credits": "None!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
