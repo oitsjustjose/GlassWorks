@@ -1,14 +1,18 @@
 package com.oitsjustjose.GlassWorks;
 
-import org.apache.commons.lang3.SystemUtils;
-import org.apache.logging.log4j.core.helpers.SystemClock;
+import net.minecraft.client.Minecraft;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
+import com.oitsjustjose.GlassWorks.Item.ModItems;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
+import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
 import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
-import com.sun.javafx.runtime.SystemProperties;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,11 +20,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
-@Mod(modid = Reference.MODID, version = Reference.VERSION)
+@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY)
 public class GlassWorks
 {
 
@@ -47,7 +48,10 @@ public class GlassWorks
 			public Item getTabIconItem() { return null; }
 		};
 		
+		ConfigHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigHandler());
 		ModBlocks.init();
+		ModItems.init();
         Recipes.init();
 		proxy.init();
 	}
@@ -61,6 +65,5 @@ public class GlassWorks
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[GlassWorks] version " + Reference.VERSION + " has successfully loaded.");
 	}
 }

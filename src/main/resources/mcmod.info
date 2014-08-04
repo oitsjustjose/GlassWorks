@@ -1,10 +1,10 @@
 [
 {
-  "modid": "GlassWorker",
-  "name": "oitsjustjose's Glass Mod!",
-  "description": "Not a whole lot going on yet!",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "GlassWorks",
+  "name": "GlassWorks",
+  "description": "oitsjustjose's GlassWorks mod, adding various Connected Texture glass blocks, pillars, and more!",
+  "version": "INDEV_BETA",
+  "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
   "authorList": ["oitsjustjose"],
