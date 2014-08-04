@@ -1,15 +1,9 @@
 package com.oitsjustjose.GlassWorker;
 
-import com.oitsjustjose.GlassWorker.Util.Recipes;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
 import com.oitsjustjose.GlassWorker.Blocks.ModBlocks;
-import com.oitsjustjose.GlassWorker.Util.ClientProxy;
 import com.oitsjustjose.GlassWorker.Util.CommonProxy;
+import com.oitsjustjose.GlassWorker.Util.Recipes;
 import com.oitsjustjose.GlassWorker.Util.Reference;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -17,7 +11,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.oredict.OreDictionary;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class GlassWorkerMain
@@ -60,6 +56,6 @@ public class GlassWorkerMain
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		
+		System.out.println("[GlassWorker] version " + Reference.VERSION + " has successfully loaded.");
 	}
 }
