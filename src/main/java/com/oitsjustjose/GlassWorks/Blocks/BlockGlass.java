@@ -1,9 +1,6 @@
-package com.oitsjustjose.GlassWorker.Blocks;
+package com.oitsjustjose.GlassWorks.Blocks;
 
-import java.util.List;
-
-import com.oitsjustjose.GlassWorker.GlassWorkerMain;
-
+import com.oitsjustjose.GlassWorks.GlassWorks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -13,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+
+import java.util.List;
 
 public class BlockGlass extends Block
 {
@@ -41,7 +40,7 @@ public class BlockGlass extends Block
 	public BlockGlass()
 	{
 		super(Material.glass);
-		setCreativeTab(GlassWorkerMain.tabGlass);
+		setCreativeTab(GlassWorks.tabGlass);
 		setResistance(1.0F);
 		setHardness(0.5F);
 		setStepSound(Block.soundTypeGlass);
@@ -143,13 +142,13 @@ public class BlockGlass extends Block
 	{
 		for(int i=0;i<47;i++)
 		{
-			OakTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Oak/" + (i+1));
-			BirchTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Birch/" + (i+1));
-			SpruceTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Spruce/" + (i+1));
-			JungleTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Jungle/" + (i+1));
-			AcaciaTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Acacia/" + (i+1));
-            DarkOakTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Dark Oak/" + (i+1));
-            ClearTextures[i] = IIconRegistry.registerIcon("GlassWorker:CTM/Glass/Clear/" + (i+1));
+			OakTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Oak/" + (i+1));
+			BirchTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Birch/" + (i+1));
+			SpruceTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Spruce/" + (i+1));
+			JungleTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Jungle/" + (i+1));
+			AcaciaTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Acacia/" + (i+1));
+            DarkOakTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Dark Oak/" + (i+1));
+            ClearTextures[i] = IIconRegistry.registerIcon("GlassWorks:CTM/Glass/Clear/" + (i+1));
         }
 	}
 

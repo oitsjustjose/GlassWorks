@@ -1,9 +1,9 @@
-package com.oitsjustjose.GlassWorker;
+package com.oitsjustjose.GlassWorks;
 
-import com.oitsjustjose.GlassWorker.Blocks.ModBlocks;
-import com.oitsjustjose.GlassWorker.Util.CommonProxy;
-import com.oitsjustjose.GlassWorker.Util.Recipes;
-import com.oitsjustjose.GlassWorker.Util.Reference;
+import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
+import com.oitsjustjose.GlassWorks.Util.CommonProxy;
+import com.oitsjustjose.GlassWorks.Util.Recipes;
+import com.oitsjustjose.GlassWorks.Util.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,13 +16,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
-public class GlassWorkerMain
+public class GlassWorks
 {
 
     @Instance(Reference.MODID)
-    public static GlassWorkerMain instance;
+    public static GlassWorks instance;
 
-    @SidedProxy(clientSide = "com.oitsjustjose.GlassWorker.Util.ClientProxy", serverSide = "com.oitsjustjose.GlassWorker.Util.CommonProxy")
+    @SidedProxy(clientSide = "com.oitsjustjose.GlassWorks.Util.ClientProxy", serverSide = "com.oitsjustjose.GlassWorks.Util.CommonProxy")
     public static CommonProxy proxy;
     
     public static CreativeTabs tabGlass;
@@ -56,6 +56,6 @@ public class GlassWorkerMain
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[GlassWorker] version " + Reference.VERSION + " has successfully loaded.");
+		System.out.println("[GlassWorks] version " + Reference.VERSION + " has successfully loaded.");
 	}
 }

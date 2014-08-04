@@ -1,9 +1,8 @@
-package com.oitsjustjose.GlassWorker.Blocks;
+package com.oitsjustjose.GlassWorks.Blocks;
 
-import java.util.List;
-
-import com.oitsjustjose.GlassWorker.GlassWorkerMain;
-
+import com.oitsjustjose.GlassWorks.GlassWorks;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -12,8 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class BlockPillar extends Block
 {
@@ -22,7 +21,7 @@ public class BlockPillar extends Block
 	public BlockPillar()
 	{
 		super(Material.rock);
-		setCreativeTab(GlassWorkerMain.tabGlass);
+		setCreativeTab(GlassWorks.tabGlass);
 		setResistance(4.0F);
 		setHardness(2.0F);
 		setStepSound(Block.soundTypeStone);
@@ -67,7 +66,7 @@ public class BlockPillar extends Block
 	public void registerBlockIcons(IIconRegister iconRegistry)
 	{
 		for(int i = 0; i < 4; i++)
-			PillarTextures[i] = iconRegistry.registerIcon("GlassWorker:CTM/Pillar/" + i);
+			PillarTextures[i] = iconRegistry.registerIcon("GlassWorks:CTM/Pillar/" + i);
 	}
 
     @Override

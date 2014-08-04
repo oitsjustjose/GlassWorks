@@ -1,13 +1,11 @@
-package com.oitsjustjose.GlassWorker.Blocks;
+package com.oitsjustjose.GlassWorks.Blocks;
 
+import com.oitsjustjose.GlassWorks.Item.Block.ItemBlockGlass;
+import com.oitsjustjose.GlassWorks.Item.Block.ItemBlockPillar;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.oitsjustjose.GlassWorker.Item.Block.ItemBlockGlass;
-import com.oitsjustjose.GlassWorker.Item.Block.ItemBlockPillar;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks
 {

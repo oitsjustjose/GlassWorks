@@ -1,6 +1,4 @@
-package com.oitsjustjose.GlassWorker.Util;
-
-import cpw.mods.fml.client.registry.RenderingRegistry;
+package com.oitsjustjose.GlassWorks.Util;
 
 public class ClientProxy extends CommonProxy
 {	

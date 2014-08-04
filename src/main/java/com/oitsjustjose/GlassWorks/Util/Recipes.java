@@ -1,6 +1,6 @@
-package com.oitsjustjose.GlassWorker.Util;
+package com.oitsjustjose.GlassWorks.Util;
 
-import com.oitsjustjose.GlassWorker.Blocks.ModBlocks;
+import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;

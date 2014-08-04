@@ -1,4 +1,4 @@
-package com.oitsjustjose.GlassWorker.Util;
+package com.oitsjustjose.GlassWorks.Util;
 
 public class CommonProxy
 {

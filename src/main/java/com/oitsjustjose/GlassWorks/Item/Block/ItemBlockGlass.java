@@ -1,13 +1,13 @@
-package com.oitsjustjose.GlassWorker.Item.Block;
+package com.oitsjustjose.GlassWorks.Item.Block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockPillar extends ItemBlock
+public class ItemBlockGlass extends ItemBlock
 {
-	public ItemBlockPillar(Block block)
+	public ItemBlockGlass(Block block)
 	{
 		super(block);
         setMaxDamage(0);
@@ -17,7 +17,7 @@ public class ItemBlockPillar extends ItemBlock
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
-    	int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 5);
+    	int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 7);
         return super.getUnlocalizedName() + meta;
     }
     
