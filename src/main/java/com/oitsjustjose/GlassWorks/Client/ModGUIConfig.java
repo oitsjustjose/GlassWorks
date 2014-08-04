@@ -1,4 +1,4 @@
-package com.oitsjustjose.GlassWorks.client;
+package com.oitsjustjose.GlassWorks.Client;
 
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;

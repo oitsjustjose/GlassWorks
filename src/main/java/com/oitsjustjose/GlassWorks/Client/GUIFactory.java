@@ -1,4 +1,4 @@
-package com.oitsjustjose.GlassWorks.client;
+package com.oitsjustjose.GlassWorks.Client;
 
 import java.util.Set;
 
