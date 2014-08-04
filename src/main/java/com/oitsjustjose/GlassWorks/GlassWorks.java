@@ -1,9 +1,14 @@
 package com.oitsjustjose.GlassWorks;
 
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.logging.log4j.core.helpers.SystemClock;
+
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
 import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
+import com.sun.javafx.runtime.SystemProperties;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
