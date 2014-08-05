@@ -6,12 +6,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
+import com.oitsjustjose.GlassWorks.Event.SawEvent;
 import com.oitsjustjose.GlassWorks.Item.ModItems;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
 import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
 import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
-import com.oitsjustjose.GlassWorks.event.SawEvent;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;

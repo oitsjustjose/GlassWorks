@@ -1,4 +1,4 @@
-package com.oitsjustjose.GlassWorks.event;
+package com.oitsjustjose.GlassWorks.Event;
 
 import java.util.List;
 
