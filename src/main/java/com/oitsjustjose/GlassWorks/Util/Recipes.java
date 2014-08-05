@@ -50,13 +50,7 @@ public class Recipes
         GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, 2),
                 "dyeWhite", new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE)));
 
-        //Saw Recipe
-        if(Loader.isModLoaded("copy's Vanilla Tweaks"))
-        	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sawDiamond),
-        			"  S", " SD", "SD ", 'S', "stickWood", 'D', Items.diamond_axe));
-        else
-        	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sawDiamond),
-        			"  S", " SD", "SD ", 'S', "stickWood", 'D', Items.diamond));
-        	
+       	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sawDiamond),
+       			"  S", " SD", "SD ", 'S', "stickWood", 'D', Items.diamond));
     }
 }

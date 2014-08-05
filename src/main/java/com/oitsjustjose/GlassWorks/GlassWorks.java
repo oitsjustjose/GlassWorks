@@ -1,9 +1,9 @@
 package com.oitsjustjose.GlassWorks;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import com.oitsjustjose.GlassWorks.Item.ModItems;
@@ -11,6 +11,7 @@ import com.oitsjustjose.GlassWorks.Util.CommonProxy;
 import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
 import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
+import com.oitsjustjose.GlassWorks.event.SawEvent;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -50,20 +51,10 @@ public class GlassWorks
 		
 		ConfigHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
+        MinecraftForge.EVENT_BUS.register(new SawEvent());
 		ModBlocks.init();
 		ModItems.init();
         Recipes.init();
 		proxy.init();
-	}
-	
-	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-
-	}
-	
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
 	}
 }
