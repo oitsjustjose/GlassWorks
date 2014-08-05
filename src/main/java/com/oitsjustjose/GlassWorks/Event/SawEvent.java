@@ -25,7 +25,7 @@ public class SawEvent
 		
 		ItemStack plank = findPlank(block);
 		
-		if(heldItem.getItem() instanceof ItemSaw)
+		if(player != null && heldItem != null && heldItem.getItem() instanceof ItemSaw && plank != null)
 		{
 			event.drops.remove(block);
 			for(int i = 0; i < 2; i++)
