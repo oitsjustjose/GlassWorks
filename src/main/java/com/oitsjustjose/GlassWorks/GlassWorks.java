@@ -55,6 +55,6 @@ public class GlassWorks
 		ModBlocks.init();
 		ModItems.init();
         Recipes.init();
-		proxy.init();
+		proxy.preInit();
 	}
 }

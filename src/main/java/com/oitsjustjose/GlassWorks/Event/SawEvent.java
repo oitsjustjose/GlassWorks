@@ -6,12 +6,14 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.oitsjustjose.GlassWorks.Item.ItemSaw;
 
@@ -27,7 +29,7 @@ public class SawEvent
 	
 		if(player != null && player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemSaw)
 		{
-			if(block instanceof BlockLog && findPlank(block, event) != null)
+			if(isLog(block) && findPlank(block, event) != null)
 			{
 				ItemStack plank = new ItemStack(findPlank(block, event).getItem(), dropQuantity(event), findPlank(block, event).getItemDamage());
 				
@@ -57,7 +59,7 @@ public class SawEvent
 	{
 		World world = event.world;
 		
-		if(block instanceof BlockLog)
+		if(isLog(block))
 		{
 			ItemStack blockStack = new ItemStack(block, 1, event.block.damageDropped(event.blockMetadata));
 			
@@ -71,6 +73,15 @@ public class SawEvent
 			return recipe.getCraftingResult(craftMatrix);	
 		}
 		return null;
+	}
+	
+	public static boolean isLog(Block block)
+	{
+		int logID = OreDictionary.getOreID(new ItemStack(Blocks.log, 1, Short.MAX_VALUE));
+		int checkForID = OreDictionary.getOreID(new ItemStack(block));
+		if(logID == checkForID)
+			return true;
+		return false;
 	}
 	
 	private static IRecipe findRecipe(InventoryCrafting crafting, World world)
