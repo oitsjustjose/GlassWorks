@@ -37,15 +37,6 @@ public class ItemSaw extends ItemAxe
 	}
 	
 	@Override
-    public ItemStack getContainerItem(ItemStack itemStack)
-    {
-        if (!hasContainerItem())
-            return null;
-        int meta = itemStack.getItemDamage();
-        return new ItemStack(this, 1, meta);
-    }
-	
-	@Override
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemstack)
     {
 		return false;
@@ -74,41 +65,6 @@ public class ItemSaw extends ItemAxe
 	{
 		return icon;
 	}
-	
-//	@Override
-//	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ )
-//	{
-//		Block getBlock = world.getBlock(x, y, z);
-//		Random random = new Random();
-//		int meta = world.getBlockMetadata(x, y, z);
-//		int woodRand = random.nextInt(3) + 1;
-//		ItemStack planks;
-//		
-//		if(!world.isRemote)
-//		{
-//			if(getBlock == Blocks.log)
-//			{
-//				world.setBlock(x, y, z, Blocks.air);
-//				world.playSoundAtEntity(player, "random.wood_click", 1.0F, 1.0F);
-//				world.spawnParticle("iconcrack_1", (double)hitX, (double)hitY, (double)hitZ, 0.0D, 1.0D, 0.0D);
-//				itemstack.damageItem(1, player);
-//				player.worldObj.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(Blocks.planks, 8, OreDictUtils.LogConverter1(meta))));
-//				return true;
-//			}
-//			else if(getBlock == Blocks.log2)
-//			{
-//				world.setBlock(x, y, z, Blocks.air);
-//				world.playSoundAtEntity(player, "random.wood_click", 1.0F, 1.0F);
-//				world.spawnParticle("iconcrack_1", (double)hitX, (double)hitY, (double)hitZ, 0.0D, 1.0D, 0.0D);
-//				itemstack.damageItem(1, player);
-//				player.worldObj.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(Blocks.planks, 8, OreDictUtils.LogConverter2(meta))));
-//				return true;
-//			}
-//
-//			return false;
-//		}
-//		return false;
-//	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)

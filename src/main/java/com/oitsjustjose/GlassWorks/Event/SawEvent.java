@@ -1,57 +1,96 @@
 package com.oitsjustjose.GlassWorks.Event;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 
-import com.google.common.eventbus.Subscribe;
 import com.oitsjustjose.GlassWorks.Item.ItemSaw;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+ 
 public class SawEvent
 {
-	@Subscribe
+	/* 
+	 * Main function of this class, checks to see if the block
+	 * extends BlockLog, and will continue if the held item is
+	 * the diamond saw. Calculates what the corresponding 
+	 * plank for the log is by trying to craft just 1 of them
+	 * in a simulated crafting grid (see @findPlank).
+	 */
+	
+	@SubscribeEvent
 	public void onHarvestBlocks(BlockEvent.HarvestDropsEvent event)
 	{
+		Block block = event.block;
 		EntityPlayer player = event.harvester;
 		ItemStack heldItem = player.inventory.getCurrentItem();
-		Block block = event.block;
+		ItemStack plank = findPlank(block, event.world, event.x, event.y, event.z);
 		
-		ItemStack plank = findPlank(block);
-		
-		if(player != null && heldItem != null && heldItem.getItem() instanceof ItemSaw && plank != null)
+		if(player != null && heldItem != null && heldItem.getItem() instanceof ItemSaw && block instanceof BlockLog)
 		{
 			event.drops.remove(block);
-			for(int i = 0; i < 2; i++)
-				event.drops.add(plank);
-				
+			event.drops.add(plank);
+			
+			System.out.println("Log Block Broken");
 		}
-		System.out.println("Block Borked");
 	}
 	
-	public static ItemStack findPlank(Block inputBlock)
+	/*
+	 * Calculates how many planks to drop based on the saw's
+	 * level of fortune (this is a simple way, unsure if I'll
+	 * be keeping it).
+	 */
+		
+	public static int dropQuantity(BlockEvent.HarvestDropsEvent event)
 	{
-		List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
-		for (int i = 0; i < recipes.size(); i++)
+		ItemStack heldItem = event.harvester.inventory.getCurrentItem();
+		int fortune = event.fortuneLevel;
+		
+		Random random = new Random();
+		
+		if(heldItem != null && heldItem.getItem() instanceof ItemSaw)
 		{
-			IRecipe tmpRecipe = recipes.get(i);
-			if (tmpRecipe instanceof IRecipe)
-			{
-				IRecipe recipe = tmpRecipe;
-				
-				if(recipe.equals(new Object[] {"D", 'D', inputBlock}))
-				{
-						ItemStack recipeResult = recipe.getRecipeOutput();
-						return recipeResult;
-				}
-			}
+			if(fortune > 0)
+				return 6 + random.nextInt(fortune);
+			return 6;
 		}
+		return 0;
+	}
+	
+	
+	/*
+	 * 
+	 * Many thanks to @copygirl for the help from BetterStorage on this. I was lost without you!
+	 * 
+	 */
+	
+	
+	public static ItemStack findPlank(Block block, World world, int x, int y, int z)
+	{
+		InventoryCrafting crafting = new InventoryCrafting(null, 3, 3);
+		crafting.setInventorySlotContents(0, new ItemStack(block, 1, block.getDamageValue(world, x, y, z)));
+		IRecipe recipe = findRecipe(crafting, world);
+		if(recipe == null)
+			return null;
+		return recipe.getCraftingResult(crafting);
+	}
+	
+
+	private static IRecipe findRecipe(InventoryCrafting crafting, World world)
+	{
+		for (IRecipe recipe : (List<IRecipe>)CraftingManager.getInstance().getRecipeList())
+			if (recipe.matches(crafting, world))
+				return recipe;
 		return null;
 	}
 }
