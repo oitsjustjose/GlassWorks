@@ -51,6 +51,6 @@ public class Recipes
                 "dyeWhite", new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE)));
 
        	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sawDiamond),
-       			"  S", " SD", "SD ", 'S', "stickWood", 'D', Items.diamond));
+       			"  S", " SA", "SD ", 'S', "stickWood", 'D', Items.diamond, 'A', Items.diamond_axe));
     }
 }

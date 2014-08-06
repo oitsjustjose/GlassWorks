@@ -70,6 +70,6 @@ public class ItemSaw extends ItemAxe
 	@SideOnly(Side.CLIENT)
 	public boolean isFull3D()
 	{
-		return false;
+		return true;
 	}
 }
