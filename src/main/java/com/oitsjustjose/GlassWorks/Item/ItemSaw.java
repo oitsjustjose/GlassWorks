@@ -28,7 +28,7 @@ public class ItemSaw extends ItemAxe
 	public ItemSaw()
 	{
 		super(ToolMaterial.EMERALD);
-		setCreativeTab(GlassWorks.tabGlass);
+		setCreativeTab(GlassWorks.GlassWorksTab);
 		setContainerItem(this);
 		setMaxStackSize(1);
 		setUnlocalizedName("Saw");

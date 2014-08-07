@@ -40,7 +40,7 @@ public class BlockGlass extends Block
 	public BlockGlass()
 	{
 		super(Material.glass);
-		setCreativeTab(GlassWorks.tabGlass);
+		setCreativeTab(GlassWorks.GlassWorksTab);
 		setResistance(1.0F);
 		setHardness(0.5F);
 		setStepSound(Block.soundTypeGlass);

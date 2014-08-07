@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
+import com.oitsjustjose.GlassWorks.Event.CropEvent;
 import com.oitsjustjose.GlassWorks.Event.SawEvent;
 import com.oitsjustjose.GlassWorks.Item.ModItems;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
@@ -19,7 +20,6 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY)
@@ -32,12 +32,34 @@ public class GlassWorks
     @SidedProxy(clientSide = "com.oitsjustjose.GlassWorks.Util.ClientProxy", serverSide = "com.oitsjustjose.GlassWorks.Util.CommonProxy")
     public static CommonProxy proxy;
     
-    public static CreativeTabs tabGlass;
+    public static CreativeTabs GlassWorksTab;
     
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{		
-		tabGlass = new CreativeTabs("tabGlass")
+		initTab();
+		ConfigHandler.init(event.getSuggestedConfigurationFile());
+		
+        FMLCommonHandler.instance().bus().register(new ConfigHandler());
+        MinecraftForge.EVENT_BUS.register(new SawEvent());
+        MinecraftForge.EVENT_BUS.register(new CropEvent());
+        
+		ModBlocks.init();
+		ModItems.init();
+		
+        Recipes.init();
+		proxy.preInit();
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event)
+	{
+		proxy.init();
+	}
+	
+	void initTab()
+	{
+		GlassWorksTab = new CreativeTabs("GlassWorksTab")
 		{
 			@Override
 			public ItemStack getIconItemStack()
@@ -48,13 +70,5 @@ public class GlassWorks
 			@Override
 			public Item getTabIconItem() { return null; }
 		};
-		
-		ConfigHandler.init(event.getSuggestedConfigurationFile());
-        FMLCommonHandler.instance().bus().register(new ConfigHandler());
-        MinecraftForge.EVENT_BUS.register(new SawEvent());
-		ModBlocks.init();
-		ModItems.init();
-        Recipes.init();
-		proxy.preInit();
 	}
 }

@@ -14,6 +14,7 @@ public class ConfigHandler
 {
     public static Configuration configuration;
     public static boolean reduceUses = false;
+    public static boolean allowCropFeature = true;
     
     public static void init(File configFile)
     {
@@ -29,6 +30,9 @@ public class ConfigHandler
     {
         reduceUses = configuration.getBoolean("Reduce Saw's Durability?", configuration.CATEGORY_GENERAL, false, 
         		"Setting this to true will halve the max durability of the saw, default durability is 1561.");
+
+        allowCropFeature = configuration.getBoolean("Allow Premium Crop Harvesting?", configuration.CATEGORY_GENERAL, true,
+        		"Setting this to false will disable the right-click-to-harvest feature on crops");
         
         if (configuration.hasChanged())
         {

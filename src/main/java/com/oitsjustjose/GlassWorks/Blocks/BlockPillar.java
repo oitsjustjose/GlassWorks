@@ -21,7 +21,7 @@ public class BlockPillar extends Block
 	public BlockPillar()
 	{
 		super(Material.rock);
-		setCreativeTab(GlassWorks.tabGlass);
+		setCreativeTab(GlassWorks.GlassWorksTab);
 		setResistance(4.0F);
 		setHardness(2.0F);
 		setStepSound(Block.soundTypeStone);
