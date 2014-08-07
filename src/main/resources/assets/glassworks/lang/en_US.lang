@@ -11,6 +11,8 @@ tile.BlockGlass6.name=Tempered Glass
 tile.BlockPillar0.name=Black Pillar
 tile.BlockPillar1.name=Pillar
 tile.BlockPillar2.name=White Pillar
+tile.BlockPillar3.name=Black Stone Bricks
+tile.BlockPillar4.name=White Stone Bricks
 
 item.Saw.name=Saw
 

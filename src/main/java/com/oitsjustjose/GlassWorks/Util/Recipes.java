@@ -18,39 +18,47 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes
 {
+	public static int black = 3;
+	public static int white = 4;
+	
     public static void init()
     {
     	//Glass Recipes
     	
         for(int i = 0; i < 6; ++i)
-        {
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockGlass, 8, i),
                     "GGG", "GDG", "GGG", 'G', "blockGlass", 'D', new ItemStack(Blocks.planks, 1, i)
             ));
-        }
-
-        GameRegistry.addSmelting(Blocks.glass, new ItemStack(ModBlocks.BlockGlass, 1, 6), 0.0F);
-
-        //Pillar Recipes (with variations)
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.BlockPillar, 2, 1), new Object[]{
-            "S", "S", 'S', new ItemStack(Blocks.stonebrick, 1, Short.MAX_VALUE)
-        });
-
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 8, 0),
-                "PPP", "PDP", "PPP", 'P', new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE), 'D', "dyeBlack"
-        ));
-
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, 0),
-                "dyeBlack", new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE)));
-
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 8, 2),
-                "PPP", "PDP", "PPP", 'P', new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE), 'D', "dyeWhite"
-        ));
-
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, 2),
-                "dyeWhite", new ItemStack(ModBlocks.BlockPillar, 1, Short.MAX_VALUE)));
 
        	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sawDiamond),
        			"  S", " SA", "SD ", 'S', "stickWood", 'D', Items.diamond, 'A', Items.diamond_axe));
+        
+       	GameRegistry.addSmelting(Blocks.glass, new ItemStack(ModBlocks.BlockGlass, 1, 6), 0.0F);
+       	stoneRecipes();
+    }
+    
+    static void stoneRecipes()
+    {
+    	//Pillar Recipes
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.BlockPillar, 2, 1), new Object[]{
+            "S", "S", 'S', new ItemStack(Blocks.stonebrick, 1, Short.MAX_VALUE)
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.BlockPillar, 2, 0), new Object[]{
+            "S", "S", 'S', new ItemStack(ModBlocks.BlockPillar, 1, black)
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.BlockPillar, 2, 2), new Object[]{
+            "S", "S", 'S', new ItemStack(ModBlocks.BlockPillar, 1, white)
+        });
+        
+        //Brick Recipes
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, black),
+        		"BBB", "BDB", "BBB", 'B', Blocks.stonebrick, 'D', "dyeBlack"
+        ));
+
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, white),
+        		"BBB", "BDB", "BBB", 'B', Blocks.stonebrick, 'D', "dyeWhite"
+        ));
     }
 }

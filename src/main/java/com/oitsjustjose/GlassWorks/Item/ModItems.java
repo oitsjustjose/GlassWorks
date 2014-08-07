@@ -1,11 +1,8 @@
 package com.oitsjustjose.GlassWorks.Item;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-
-import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
-
+import net.minecraft.item.ItemAxe;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
@@ -15,5 +12,7 @@ public class ModItems
 	public static void init()
 	{	
 		GameRegistry.registerItem(sawDiamond, "Saw");
+		
+		OreDictionary.registerOre("dyeRed", sawDiamond);
 	}
 }
