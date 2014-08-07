@@ -22,7 +22,7 @@ public class ModBlocks
 		GameRegistry.registerBlock(BlockGlass, ItemBlockGlass.class, "GlassWorks Glass");
 		GameRegistry.registerBlock(BlockPillar, ItemBlockPillar.class, "Pillar Block");
 
-		for(int i = 0; i < 6; i++)
+		for(int i = 0; i < 7; i++)
 		{
 			OreDictionary.registerOre("blockGlass", new ItemStack(BlockGlass, 1, i));
 		}
