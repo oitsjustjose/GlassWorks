@@ -1,6 +1,7 @@
 package com.oitsjustjose.GlassWorks.Blocks;
 
-import com.oitsjustjose.GlassWorks.GlassWorks;
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -11,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-import java.util.List;
+import com.oitsjustjose.GlassWorks.GlassWorks;
 
 public class BlockGlass extends Block
 {

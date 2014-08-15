@@ -8,6 +8,7 @@ import net.minecraftforge.common.MinecraftForge;
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import com.oitsjustjose.GlassWorks.Event.CropEvent;
 import com.oitsjustjose.GlassWorks.Event.SawEvent;
+import com.oitsjustjose.GlassWorks.FMP.FMPHandler;
 import com.oitsjustjose.GlassWorks.Item.ModItems;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
 import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
@@ -15,6 +16,7 @@ import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -55,6 +57,8 @@ public class GlassWorks
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
+		if(Loader.isModLoaded("ForgeMicroblock"))
+			FMPHandler.init();
 	}
 	
 	void initTab()
