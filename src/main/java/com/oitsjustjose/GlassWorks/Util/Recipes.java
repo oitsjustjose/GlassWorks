@@ -53,11 +53,11 @@ public class Recipes
         });
         
         //Brick Recipes
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, black),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 8, black),
         		"BBB", "BDB", "BBB", 'B', Blocks.stonebrick, 'D', "dyeBlack"
         ));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 1, white),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockPillar, 8, white),
         		"BBB", "BDB", "BBB", 'B', Blocks.stonebrick, 'D', "dyeWhite"
         ));
     }

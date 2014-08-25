@@ -8,7 +8,6 @@ import net.minecraftforge.common.MinecraftForge;
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import com.oitsjustjose.GlassWorks.Event.CropEvent;
 import com.oitsjustjose.GlassWorks.Event.SawEvent;
-import com.oitsjustjose.GlassWorks.FMP.FMPHandler;
 import com.oitsjustjose.GlassWorks.Item.ModItems;
 import com.oitsjustjose.GlassWorks.Util.CommonProxy;
 import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
@@ -57,8 +56,6 @@ public class GlassWorks
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
-		if(Loader.isModLoaded("ForgeMicroblock"))
-			FMPHandler.init();
 	}
 	
 	void initTab()

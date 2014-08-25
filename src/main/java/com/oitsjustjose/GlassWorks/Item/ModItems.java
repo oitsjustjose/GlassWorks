@@ -12,7 +12,5 @@ public class ModItems
 	public static void init()
 	{	
 		GameRegistry.registerItem(sawDiamond, "Saw");
-		
-		OreDictionary.registerOre("dyeRed", sawDiamond);
 	}
 }

@@ -37,6 +37,8 @@ public class BlockGlass extends Block
 		17, 17, 22, 26, 17, 17, 22, 26, 7, 7, 24, 24, 7, 7, 10, 10, 29, 29, 44, 41, 
 		29, 29, 39, 33, 4, 4, 5, 5, 4, 4, 5, 5, 9, 9, 30, 12, 9, 9, 30, 12, 7, 7, 
 		24, 24, 7, 7, 10, 10, 8, 8, 36, 35, 8, 8, 34, 11 };
+	public static boolean[] bitMatrix = new boolean[8];
+
 
 	public BlockGlass()
 	{
@@ -50,7 +52,6 @@ public class BlockGlass extends Block
 	@Override
 	public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side)
 	{
-		boolean[] bitMatrix = new boolean[8];
 		int meta = world.getBlockMetadata(x, y, z);
 
 		if(Minecraft.isFancyGraphicsEnabled())
