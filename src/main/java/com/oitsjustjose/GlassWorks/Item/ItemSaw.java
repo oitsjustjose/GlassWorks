@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -22,6 +23,7 @@ public class ItemSaw extends ItemAxe
 		setMaxStackSize(1);
 		setUnlocalizedName("Saw");
 		setMaxDamage(ConfigHandler.reduceUses ? (1561 / 2) : 1561);
+		GameRegistry.registerItem(this, "Saw");
 	}
 	
 	@Override
@@ -31,12 +33,5 @@ public class ItemSaw extends ItemAxe
 		entity.attackEntityFrom(dmgSrc.causePlayerDamage(player), 5.0F);
 		itemstack.damageItem(1, player);
 		return false;
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public boolean isFull3D()
-	{
-		return true;
 	}
 }

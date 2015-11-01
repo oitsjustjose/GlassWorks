@@ -1,14 +1,17 @@
 package com.oitsjustjose.GlassWorks.Item;
 
+import com.oitsjustjose.GlassWorks.Util.Reference;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
-	public static final Item sawDiamond = new ItemSaw();
+	public static Item sawDiamond;
 	
 	public static void init()
 	{	
-		GameRegistry.registerItem(sawDiamond, "Saw");
+		sawDiamond = new ItemSaw();
 	}
 }

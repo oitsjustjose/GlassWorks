@@ -20,13 +20,13 @@ public class CropEvent
 	{
 		if(ConfigHandler.allowCropFeature)
 		{
-			Block crop = event.world.getBlockState(event.pos).getBlock();
 			if(event.entityPlayer.getCurrentEquippedItem() == null && event.action == Action.RIGHT_CLICK_BLOCK &&
-					crop != null)
+					event.world.getBlockState(event.pos) != null)
 			{	
 				EntityPlayer player = event.entityPlayer;
 				World world = event.world;
 				IBlockState cropState = event.world.getBlockState(event.pos);
+				Block crop = cropState.getBlock();
 				int dropRate = event.world.rand.nextInt(3) + 1;
 				ItemStack drops = new ItemStack(crop.getItemDropped(cropState, event.world.rand, Short.MAX_VALUE), dropRate);
 				
