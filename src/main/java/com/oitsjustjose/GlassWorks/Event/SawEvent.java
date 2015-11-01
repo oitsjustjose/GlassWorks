@@ -3,8 +3,9 @@ package com.oitsjustjose.GlassWorks.Event;
 import java.util.List;
 import java.util.Random;
 
+import com.oitsjustjose.GlassWorks.Item.ItemSaw;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLog;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryCrafting;
@@ -13,18 +14,15 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.oitsjustjose.GlassWorks.Item.ItemSaw;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
  
 public class SawEvent
 {	
 	@SubscribeEvent
 	public void onHarvestBlocks(BlockEvent.HarvestDropsEvent event)
 	{
-		Block block = event.block;
+		Block block = event.state.getBlock();
 		EntityPlayer player = event.harvester;
 	
 		if(player != null && player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemSaw)
@@ -61,12 +59,12 @@ public class SawEvent
 		
 		if(isLog(block))
 		{
-			ItemStack blockStack = new ItemStack(block, 1, event.block.damageDropped(event.blockMetadata));
+			ItemStack blockStack = new ItemStack(block, 1, event.state.getBlock().getMetaFromState(event.state));
 			
 	        InventoryCrafting craftMatrix = new InventoryCrafting(event.harvester.inventoryContainer, 3, 3);
 	        craftMatrix.setInventorySlotContents(0, blockStack);
 	        IRecipe recipe = findRecipe(craftMatrix, world);
-	        craftMatrix.closeInventory();
+	        craftMatrix.closeInventory(event.harvester);
 
 			if (recipe == null)
 				return null;
@@ -77,11 +75,7 @@ public class SawEvent
 	
 	public static boolean isLog(Block block)
 	{
-		int logID = OreDictionary.getOreID(new ItemStack(Blocks.log, 1, Short.MAX_VALUE));
-		int checkForID = OreDictionary.getOreID(new ItemStack(block));
-		if(logID == checkForID)
-			return true;
-		return false;
+		return OreDictionary.itemMatches(new ItemStack(Blocks.log, 1, Short.MAX_VALUE), new ItemStack(block), false);
 	}
 	
 	private static IRecipe findRecipe(InventoryCrafting crafting, World world)

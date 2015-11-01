@@ -1,13 +1,12 @@
 package com.oitsjustjose.GlassWorks.Blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.oitsjustjose.GlassWorks.Item.Block.ItemBlockGlass;
 import com.oitsjustjose.GlassWorks.Item.Block.ItemBlockPillar;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks
 {
@@ -16,15 +15,15 @@ public class ModBlocks
 	
 	public static void init()
 	{
-		BlockGlass = new BlockGlass().setBlockName("BlockGlass");
-		BlockPillar = new BlockPillar().setBlockName("BlockPillar");
-
-		GameRegistry.registerBlock(BlockGlass, ItemBlockGlass.class, "GlassWorks Glass");
-		GameRegistry.registerBlock(BlockPillar, ItemBlockPillar.class, "Pillar Block");
-
-		for(int i = 0; i < 7; i++)
-		{
-			OreDictionary.registerOre("blockGlass", new ItemStack(BlockGlass, 1, i));
-		}
+//		BlockGlass = new BlockGlass().setUnlocalizedName("BlockGlass");
+//		BlockPillar = new BlockPillar().setUnlocalizedName("BlockPillar");
+//
+//		GameRegistry.registerBlock(BlockGlass, ItemBlockGlass.class, "GlassWorks Glass");
+//		GameRegistry.registerBlock(BlockPillar, ItemBlockPillar.class, "Pillar Block");
+//
+//		for(int i = 0; i < 7; i++)
+//		{
+//			OreDictionary.registerOre("blockGlass", new ItemStack(BlockGlass, 1, i));
+//		}
 	}
 }

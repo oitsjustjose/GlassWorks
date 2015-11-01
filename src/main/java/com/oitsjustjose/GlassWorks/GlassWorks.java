@@ -1,10 +1,5 @@
 package com.oitsjustjose.GlassWorks;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-
 import com.oitsjustjose.GlassWorks.Blocks.ModBlocks;
 import com.oitsjustjose.GlassWorks.Event.CropEvent;
 import com.oitsjustjose.GlassWorks.Event.SawEvent;
@@ -14,14 +9,18 @@ import com.oitsjustjose.GlassWorks.Util.ConfigHandler;
 import com.oitsjustjose.GlassWorks.Util.Recipes;
 import com.oitsjustjose.GlassWorks.Util.Reference;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY)
 public class GlassWorks
@@ -65,7 +64,7 @@ public class GlassWorks
 			@Override
 			public ItemStack getIconItemStack()
 			{
-				return new ItemStack(ModBlocks.BlockGlass);
+				return new ItemStack(Blocks.anvil);
 			}
 
 			@Override

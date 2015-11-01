@@ -3,12 +3,8 @@ package com.oitsjustjose.GlassWorks.Util;
 import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
-
-import com.oitsjustjose.GlassWorks.Item.ItemSaw;
-import com.oitsjustjose.GlassWorks.Item.ModItems;
-
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ConfigHandler
 {
