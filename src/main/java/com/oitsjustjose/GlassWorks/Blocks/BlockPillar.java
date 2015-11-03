@@ -25,62 +25,6 @@
 //		setStepSound(Block.soundTypeStone);
 //	}
 //
-//	@Override
-//	@SideOnly(Side.CLIENT)
-//	public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side)
-//	{
-//		int meta = world.getBlockMetadata(x, y, z);
-//		
-//		if(meta < 3)
-//		{
-//			if(side == 0 || side == 1)
-//			{
-//				return PillarTextures[4];
-//			}
-//			
-//			if(side != 1 || side != 2)
-//			{
-//				if(world.getBlock(x, y + 1, z) == this && world.getBlockMetadata(x, y + 1, z) == meta)
-//				{
-//					if(world.getBlock(x, y - 1, z) == this && world.getBlockMetadata(x, y - 1, z) == meta)
-//						return PillarTextures[2];
-//					else
-//						return PillarTextures[3];
-//				}
-//				else if(world.getBlock(x, y - 1, z) == this && world.getBlockMetadata(x, y - 1, z) == meta)
-//					return PillarTextures[1];
-//			}
-//			
-//				return PillarTextures[0];
-//		}
-//		
-//		else return BrickTexture;
-//	}
-//
-//	@Override
-//	@SideOnly(Side.CLIENT)
-//    public IIcon getIcon(int side, int meta)
-//    {
-//		if(meta < 3)
-//		{
-//			if(side == 0 || side == 1)
-//				return PillarTextures[4];
-//		else
-//			return PillarTextures[0];
-//		}
-//		else
-//			return BrickTexture;
-//    }
-//    
-//    @Override
-//	@SideOnly(Side.CLIENT)
-//	public void registerBlockIcons(IIconRegister iconRegistry)
-//	{
-//		for(int i = 0; i < 5; i++)
-//			PillarTextures[i] = iconRegistry.registerIcon("GlassWorks:CTM/Pillar/" + i);
-//		BrickTexture = iconRegistry.registerIcon("GlassWorks:Brick");
-//	}
-//
 //    @Override
 //    public int damageDropped(int par1)
 //    {
