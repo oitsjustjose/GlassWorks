@@ -1,4 +1,3 @@
-GlassWorks
-==========
+# This Repo has Moved!
 
-A simple Aesthetic mod adding Connecting glass blocks and pillars. More to come!
+This repository has been moved to a [new location!](https://git.oitsjustjose.com/me/GlassWorks)
